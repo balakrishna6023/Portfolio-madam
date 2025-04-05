@@ -158,7 +158,9 @@
       flex-direction: column;
       text-align: center;
   }
-
+.contact-heading{
+  font-size: 2rem;
+}
   .contact-left, 
   .contact-right {
       max-width: 100%;
