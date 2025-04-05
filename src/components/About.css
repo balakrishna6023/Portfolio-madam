@@ -127,7 +127,7 @@
   /* Responsive Design */
   @media screen and (max-width: 768px) {
     .about-container{
-        margin-top: -250px;
+        margin-top: -210px;
     }
     .about-content {
       flex-direction: column;
@@ -141,7 +141,7 @@
       font-size: 2rem;
     }
     .about-right{
-      margin-top: -20px;
+      margin-top: -40px;
     }
   }
   
