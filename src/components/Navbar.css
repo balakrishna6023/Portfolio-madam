@@ -1,0 +1,82 @@
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1E3A8A; /* Dark Blue */
+  padding: 15px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 70px;
+}
+
+.nav-link {
+  color: #FACC15; /* Gold */
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #10B981; /* Emerald Green */
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 50vh;
+  background-color: #111827; /* Off-Black */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.mobile-link {
+  color: #FACC15; /* Gold */
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mobile-link:hover {
+  color: #10B981; /* Emerald Green */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar{
+    width: 100%;
+    height: 30px;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+}

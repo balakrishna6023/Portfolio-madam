@@ -1,0 +1,93 @@
+/* General Styling */
+.splash-screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #0a0a0a 20%, #222 100%);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  /* Background Overlay Effect */
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 128, 0.15) 0%, rgba(0, 0, 0, 0.9) 70%);
+    z-index: 0;
+  }
+  
+  /* Image Animation */
+  .splash-image {
+    width: 180px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px rgba(0, 255, 128, 0.4);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Welcome Text */
+  .welcome-text {
+    font-size: 2.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(0, 255, 128, 0.8);
+    letter-spacing: 3px;
+    margin-top: 15px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Loader Bar */
+  .loader {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #00ff80, transparent);
+    border-radius: 5px;
+    margin-top: 25px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* 🎯 Responsive Design */
+  @media (max-width: 768px) {
+    .splash-image {
+      width: 140px; /* Reduce size for smaller screens */
+    }
+  
+    .welcome-text {
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+  
+    .loader {
+      height: 4px;
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .splash-image {
+      width: 120px; /* Further reduce for very small screens */
+    }
+  
+    .welcome-text {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+  
+    .loader {
+      height: 3px;
+      width: 80%;
+    }
+  }
+  
