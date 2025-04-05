@@ -89,6 +89,7 @@
   /* Right Section - Skills */
   .about-right {
     flex: 1;
+    
   }
   
   .about-right h3 {
@@ -138,6 +139,9 @@
   
     .heading-about {
       font-size: 2rem;
+    }
+    .about-right{
+      margin-top: -20px;
     }
   }
   
