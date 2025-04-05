@@ -126,7 +126,7 @@
   /* Responsive Design */
   @media screen and (max-width: 768px) {
     .about-container{
-        margin-top: -290px;
+        margin-top: -250px;
     }
     .about-content {
       flex-direction: column;
