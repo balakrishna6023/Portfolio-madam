@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react"; // Install lucide-react for icons
 import "./Navbar.css";
-
+import profile from "../assets/image-profile.jpg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,7 +15,12 @@ const Navbar = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Desktop Navigation */}
+      <div className="logo-section">
+           <img src={profile}></img>
+           <h1>KRISHNAVENI</h1>
+        </div>
       <div className="nav-links">
+        
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
           <Link to="home" smooth={true} duration={500} className="nav-link">
             Home

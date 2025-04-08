@@ -1,16 +1,28 @@
 /* Navbar Styles */
 .navbar {
   display: flex;
-  justify-content: center;
   align-items: center;
   background-color: #1E3A8A; /* Dark Blue */
-  padding: 15px 0;
+  padding: 5px 50px;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 1000;
+  justify-content: space-around;
 }
-
+.logo-section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-left: -100px;
+}
+.logo-section img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 /* Navigation Links */
 .nav-links {
   display: flex;
