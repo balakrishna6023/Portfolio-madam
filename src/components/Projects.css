@@ -18,7 +18,7 @@
 .project-heading::after {
   content: "";
   display: block;
-  width: 200px;
+  width: 700px;
   height: 3px;
   background-color: #3ac7a5;
   margin: 8px auto 0;
