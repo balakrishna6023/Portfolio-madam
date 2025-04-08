@@ -1,147 +1,143 @@
 /* About Container */
 .about-container {
-    padding: 30px 20px;
-    background: #121212;
-    color: #ffffff;
-    max-width: 1400px;
-    margin: auto;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    
-    /* box-shadow: 0px 5px 15px rgba(0, 255, 170, 0.2); */
+  padding: 20px 20px;
+  background: #1a1b26; /* Deep navy blue */
+  color: #a9b1d6; /* Light gray-blue */
+  max-width: 1400px;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading Design with Animated Underline */
+.heading-about {
+  text-align: center;
+  font-size: 3.7rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #7aa2f7, #c0caf5); /* Bright blue to lighter blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.heading-about::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 3px;
+  background-color: #7aa2f7; /* Bright blue */
+  margin: 8px auto 0;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+.heading-about:hover::after {
+  width: 100%;
+}
+
+/* About Content Layout */
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Left Section */
+.about-left {
+  flex: 1;
+}
+
+.about-description {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: #a9b1d6; /* Light gray-blue */
+  letter-spacing: 1px;
+}
+
+.about-left h3 {
+  margin-top: 20px;
+  color: #c0caf5; /* Lighter blue */
+  font-size: 28px;
+}
+
+.about-left ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.about-left li {
+  margin-bottom: 20px;
+  padding: 12px;
+  background: #24283b; /* Slightly lighter navy */
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: #a9b1d6; /* Light gray-blue */
+}
+
+.about-left li:hover {
+  transform: scale(1.05);
+}
+
+/* Right Section - Skills */
+.about-right {
+  flex: 1;
+}
+
+.about-right h3 {
+  color: #c0caf5; /* Lighter blue */
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+/* Skill Progress Bars */
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill p {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: #a9b1d6; /* Light gray-blue */
+}
+
+.progress-bar {
+  height: 10px;
+  width: 100%;
+  background: #24283b; /* Slightly lighter navy */
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 5px rgba(122, 162, 247, 0.3);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7aa2f7, #c0caf5); /* Bright blue to lighter blue */
+  transition: width 1.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .about-container {
+      /* margin-top: 210px; */
   }
-  
-  /* Heading Design with Animated Underline */
-  .heading-about {
-    text-align: center;
-    font-size: 3.7rem;
-    font-weight: bold;
-    background: linear-gradient(90deg, #3ac7a5, #00d4ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 30px;
-  }
-  
-  .heading-about::after {
-    content: "";
-    display: block;
-    width: 50%;
-    height: 3px;
-    background-color: #3ac7a5;
-    margin: 8px auto 0;
-    border-radius: 5px;
-    transition: width 0.3s ease-in-out;
-  }
-  
-  .heading-about:hover::after {
-    width: 100%;
-  }
-  
-  /* About Content Layout */
   .about-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 60px;
-  }
-  
-  /* Left Section */
-  .about-left {
-    flex: 1;
-  }
-  
-  .about-description {
-    font-size: 1.3rem;
-    line-height: 1.4;
-    color: #ccc;
-    letter-spacing: 1px;
-  }
-  
-  .about-left h3 {
-    margin-top: 20px;
-    color: #00d4ff;
-    font-size: 28px;
-  }
-  
-  .about-left ul {
-    list-style-type: none;
-    padding: 0px;
-  }
-  
-  .about-left li {
-    margin-bottom: 20px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    color: #ccc;
-  }
-  
-  .about-left li:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Right Section - Skills */
-  .about-right {
-    flex: 1;
-    
-  }
-  
-  .about-right h3 {
-    color: #00d4ff;
-    margin-bottom: 15px;
-    font-size: 28px;
-  }
-  
-  /* Skill Progress Bars */
-  .skill {
-    margin-bottom: 15px;
-  }
-  .skill p{
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    font-weight: 400;
-    color: #ccc;
-  }
-  
-  .progress-bar {
-    height: 10px;
-    width: 100%;
-    background: #222;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: inset 0px 0px 5px rgba(0, 255, 170, 0.3);
-  }
-  
-  .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #3ac7a5, #00d4ff);
-    transition: width 1.5s ease-in-out;
-  }
-  
-  /* Responsive Design */
-  @media screen and (max-width: 768px) {
-    .about-container{
-        margin-top: -210px;
-    }
-    .about-content {
       flex-direction: column;
-    }
-    .about-description{
-        font-size: 20px;
-        text-align: justify;
-    }
-  
-    .heading-about {
-      font-size: 2rem;
-    }
-    .about-right{
-      margin-top: -50px;
-    }
   }
-  
+  .about-description {
+      font-size: 20px;
+      text-align: justify;
+  }
+  .heading-about {
+      font-size: 2rem;
+  }
+  .about-right {
+      margin-top: -50px;
+  }
+}

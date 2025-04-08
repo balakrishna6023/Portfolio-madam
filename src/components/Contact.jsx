@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import mail from "../assets/mail_icon.svg";
@@ -9,17 +9,18 @@ import "./contact.css";
 const Contact = () => {
   const formRef = useRef();
   const [status, setStatus] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
-      .sendForm(
-        "your_service_id", // Replace with your EmailJS service ID
-        "your_template_id", // Replace with your EmailJS template ID
-        formRef.current,
-        "your_user_id" // Replace with your EmailJS user ID
-      )
+      .sendForm("your_service_id", "your_template_id", formRef.current, "your_user_id")
       .then(
         () => {
           setStatus("Message Sent Successfully!");
@@ -32,55 +33,52 @@ const Contact = () => {
       );
   };
 
+  const MotionDiv = isMobile ? "div" : motion.div;
+  const MotionImg = isMobile ? "img" : motion.img;
+  const MotionButton = isMobile ? "button" : motion.button;
+
   return (
-    <motion.div
+    <MotionDiv
       className="contact"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 1.2, ease: "easeOut" }}}
+      {...(!isMobile && { initial: { opacity: 0 }, animate: { opacity: 1, transition: { duration: 1.2, ease: "easeOut" }}})}
     >
       {/* Heading */}
-      <motion.h1
+      <MotionDiv
         className="contact-heading"
-        initial={{ y: -30, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.6 }}}
-        viewport={{ once: true }}
+        {...(!isMobile && { initial: { y: -30, opacity: 0 }, whileInView: { y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.6 }}, viewport: { once: true } })}
       >
         Get In Touch
-      </motion.h1>
+      </MotionDiv>
 
       <div className="contact-content">
         {/* Left Side */}
-        <motion.div
+        <MotionDiv
           className="contact-left"
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1, transition: { delay: 0.3, duration: 0.6 }}}
-          viewport={{ once: true }}
+          {...(!isMobile && { initial: { x: -100, opacity: 0 }, whileInView: { x: 0, opacity: 1, transition: { delay: 0.3, duration: 0.6 }}, viewport: { once: true } })}
         >
           <h1>Let's Talk</h1>
           <p>I'm currently available for new projects. Feel free to message me.</p>
 
           <div className="info">
-            <motion.img src={mail} alt="Email Icon" whileHover={{ scale: 1.1 }} />
-            <p>balakrishnalingala94@gmail.com</p>
+            <MotionImg src={mail} alt="Email Icon" {...(!isMobile && { whileHover: { scale: 1.1 } })} />
+            <p>ba4@gmail.com</p>
           </div>
 
           <div className="info">
-            <motion.img src={mobile} alt="Phone Icon" whileHover={{ scale: 1.1 }} />
+            <MotionImg src={mobile} alt="Phone Icon" {...(!isMobile && { whileHover: { scale: 1.1 } })} />
             <p>+91 9390824604</p>
           </div>
 
           <div className="info">
-            <motion.img src={location} alt="Location Icon" whileHover={{ scale: 1.1 }} />
+            <MotionImg src={location} alt="Location Icon" {...(!isMobile && { whileHover: { scale: 1.1 } })} />
             <p>Andhra Pradesh, India</p>
           </div>
-        </motion.div>
+        </MotionDiv>
 
         {/* Right Side - Form */}
-        <motion.div
+        <MotionDiv
           className="contact-right"
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1, transition: { delay: 0.3, duration: 0.6 }}}
-          viewport={{ once: true }}
+          {...(!isMobile && { initial: { x: 100, opacity: 0 }, whileInView: { x: 0, opacity: 1, transition: { delay: 0.3, duration: 0.6 }}, viewport: { once: true } })}
         >
           <form ref={formRef} onSubmit={sendEmail}>
             <label>Your Name</label>
@@ -92,20 +90,18 @@ const Contact = () => {
             <label>Write Your Message Here</label>
             <textarea name="message" placeholder="Enter message" rows={3} required />
 
-            <motion.button
+            <MotionButton
               type="submit"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
+              {...(!isMobile && { whileHover: { scale: 1.05 }, whileTap: { scale: 0.95 }, transition: { duration: 0.2 } })}
             >
               Submit
-            </motion.button>
+            </MotionButton>
 
             {status && <p className="status-message">{status}</p>}
           </form>
-        </motion.div>
+        </MotionDiv>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 };
 

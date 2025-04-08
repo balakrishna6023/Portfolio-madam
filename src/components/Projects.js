@@ -22,7 +22,7 @@ const Projects = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container">
       <h1 className="project-heading">Projects</h1>
       <div className="projects-grid">
         {currentItems.map((project, index) => (
@@ -31,14 +31,11 @@ const Projects = () => {
             className="project-card"
             whileHover={{ scale: 1.05 }}
           >
-            {/* Project Image */}
             <img
               src={project.w_image}
               alt={project.w_name}
               className="project-image"
             />
-
-            {/* Hover Content */}
             <div className="card-info">
               <h3 className="project-name">{project.w_name}</h3>
               <p className="description">{project.description}</p>
@@ -64,8 +61,6 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
-
-      {/* Pagination Controls */}
       <div className="pagination">
         <button onClick={handlePrev} className="btn btn-prev" disabled={currentPage === 1}>
           Previous

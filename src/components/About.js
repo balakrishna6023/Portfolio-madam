@@ -28,6 +28,7 @@ const About = () => {
             I am an enthusiastic and dedicated Full Stack Developer with a foundational understanding of Java development and full-stack technologies. I specialize in building dynamic and efficient web applications using modern frameworks and languages. Despite having less professional experience, my passion for coding drives me to continuously learn and adapt to new challenges.
           </p>
           <h3>Education</h3>
+          <br></br>
           <ul>
             <li>B.Tech - Information Technology, GMRIT Rajam</li>
             <li>Diploma - ECE, Sri Venkateswara College, Srikakulam</li>
