@@ -61,7 +61,7 @@ const Contact = () => {
 
           <div className="info">
             <MotionImg src={mail} alt="Email Icon" {...(!isMobile && { whileHover: { scale: 1.1 } })} />
-            <p>ba4@gmail.com</p>
+            <p>pedadakrishnaveni143@gmail.com</p>
           </div>
 
           <div className="info">

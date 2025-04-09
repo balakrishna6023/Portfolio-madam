@@ -172,7 +172,7 @@
     padding-left: 0px;
   }
   .contact-right {
-    width: 380px;
+    max-width: 400px;
   }
   .contact-right button {
     width: 200px;
